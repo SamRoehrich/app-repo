@@ -1,0 +1,56 @@
+[
+  {
+    "name": "development",
+    "type": "postgres",
+    "host": "localhost",
+    "port": "5432",
+    "username": "postgres",
+    "password": "$0ftchosS",
+    "database": "app",
+    "synchronize": true,
+    "logging": true,
+    "entities": ["src/entities/**/*.ts"],
+    "migrations": ["src/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+    }
+  },
+  {
+    "name": "production",
+    "type": "postgres",
+    "host": "ec2-54-234-28-165.compute-1.amazonaws.com",
+    "port": "5432",
+    "username": "eftsbprsunzivu",
+    "password": "34be2dd36f664e46196efadc1fbca94418cd0faec851f3746d3057416f555a13",
+    "database": "dd84mekbgqcj2o",
+    "synchronize": true,
+    "logging": false,
+    "entities": ["dist/entity/*.js"],
+    "ssl": {
+      "rejectUnauthorized": false
+    }
+  },
+  {
+    "name": "test",
+    "type": "postgres",
+    "host": "abb-clone.c3ipynzvmkp9.us-east-1.rds.amazonaws.com",
+    "port": "5432",
+    "username": "postgres",
+    "password": "$0ftchosS",
+    "database": "abb-clone",
+    "synchronize": true,
+    "logging": true,
+    "dropSchema": true,
+    "entities": ["src/entity/**/*.ts"],
+    "migrations": ["src/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+    }
+  }
+]

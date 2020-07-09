@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "react-native",
+      "react-native-*",
+      "react-native/**",
+      "@babel/runtime",
+      "@babel/core",
+      "metro-react-native-babel-preset",
+      "invariant"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "3.22.1"
+  },
+  "scripts": {
+    "postinstall": "yarn run build:server",
+    "build:server": "lerna run build --scope={@app/server,@app/common}"
+  }
+}
